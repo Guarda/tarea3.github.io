@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 15px;
+    --stripe: #cfd8dc;
+    --bg: #e1e1e1;
+      
+    background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+    linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: var(--stripe);
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.linkText{
+    color: blue;
+}
+nav {
+    background: #222;
+    margin: 0px;
+}
+
+.menu,
+.item{
+    padding: 10px;
+    margin:  auto;
+    justify-content: center;
+    text-align: center;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #ccc;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.titulo{
+    background-color: rgb(46, 35, 194);
+    color: white;
+    text-align: center;
+    font-size: 4em;
+}
+
+.titulo2{
+    text-align: center;
+    font-size: 4em;
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.tabla{
+    display: flex;
+    flex-direction: row;
+    margin:  auto;
+    justify-content: center;
+    text-align: center; 
+}
+
+.rows,td{
+    padding: 20px;
+    margin-right: 10vw;
+    border: 3px solid #ddd black;  
+    border-collapse: collapse; 
+    border-style: outset;
+}
+
+

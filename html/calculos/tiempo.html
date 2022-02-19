@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\..\css\style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="item"><a href="calculo.html">Volver</a></li>
+                <li class="item"><a href="ciclos.html">Ciclos</a></li>
+                <li class="item"><a href="frecuencia.html">Frecuencia</a></li>
+                <li class="item"><a href="Tabla">Tabla</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <div class="div1">
+                <p>
+                    <label>Tiempo de ejecucion</label>
+                    <span id="inputTiempo" value="0S">0</span>
+                    <select name="escalatiempo" id="idescalatiempo"  onchange="convertir()">                      
+                        <option value="1000000000">ns</option>
+                        <option value="1000000">µs</option>
+                        <option value="1000">ms</option>
+                        <option selected="selected" value="1">s</option>
+                        <option value="0.001">Ks</option>                       
+                    </select> 
+                    <label>=</label>
+                    <label>Ciclos para finalizar</label>
+                    <input id="inputCiclos" type="text" step="inputCiclos.value*1000" placeholder="CPI"
+                        oninput="calculate()" onchange="calculate()">
+                    <label>* 1/</label>
+                    <label>Frecuencia</label>
+                    <input id="inputFrecuencia" type="text" step="inputFrecuencia.value*1000" placeholder="Hz"
+                        oninput="calculate()" onchange="calculate()">
+                
+                    <select name="escalafrecuencia" id="escalafrecuencia"  onchange="calculate()">
+                        <option value="1">Hz</option>
+                        <option value="1000">KHz</option>
+                        <option value="1000000">MHz</option>
+                        <option value="1000000000">GHz</option>
+                    </select>                
+                
+                </p>
+
+            </div>
+        </div>
+
+        <script src="../../js/js.js"></script>
+    </main>
+</body>
+
+</html>
