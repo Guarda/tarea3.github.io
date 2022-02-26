@@ -90,4 +90,10 @@ h1{
     border-style: outset;
 }
 
+img{
+    display:block;
+    margin:auto;
+    height: 150px;
+    width: 200px;
+}
 

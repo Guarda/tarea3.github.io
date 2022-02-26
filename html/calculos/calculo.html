@@ -5,32 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\..\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       <!--Import Google Icon Font-->
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   
+ 
     <title>Document</title>
 </head>
 <script type="text/javascript">
+ 
     function addRows() {
+        
+       
+
+
         var table = document.getElementById('emptbl');
         var rowCount = table.rows.length;
-        document.getElementById('inputCiclos[]').innerHTML = rowCount;
         var cellCount = table.rows[0].cells.length;
         var row = table.insertRow(rowCount);
+     
         for (var i = 0; i <= cellCount; i++) {
+           
+            
+           // var cantidadciclos = table.rows[row-1].cells[0].value;
+            //var repite = table.rows[row-1].cells[1].value;
+           
+           //ciclos = parseInt(cantidadciclos) * parseInt(repite);
+     
+            if(i==2)
+           {
             var cell = 'cell' + i;
             cell = row.insertCell(i);
             var copycel = document.getElementById('col' + i).innerHTML;
-            document.getElementById('col' + i).innerHTML;           
-            cell.innerHTML = copycel;
-            if (i == 3) {
-                var radioinput = document.getElementById('col3').getElementsByTagName('input');
-                for (var j = 0; j <= radioinput.length; j++) {
-                    if (radioinput[j].type == 'radio') {
-                        var rownum = rowCount;
-                        radioinput[j].name = 'gender[' + rownum + ']';
-                    }
-                }
+             document.getElementById('col' + i).innerHTML;           
+            cell.innerHTML = ciclos;
             }
+      
+                var cell = 'cell' + i;
+            cell = row.insertCell(i);
+            var copycel = document.getElementById('col' + i).innerHTML;
+                document.getElementById('col' + i).innerHTML;     
+                cell.innerHTML = copycel; 
+            
+           
         }
+       
+
+
     }
     function deleteRows() {
         var table = document.getElementById('emptbl');
@@ -44,7 +67,17 @@
         }
     }
     function contarCiclos() {
+        var table = document.getElementById('emptbl');
+        var rowCount = table.rows.length;
+        if (rowCount == '1') {
+            alert('There should be atleast one row');
+        }
+        else {
+           
+            deleteRows();
+           
 
+        }
     }
 </script>
 
@@ -61,38 +94,52 @@
     </header>
     <main>
         <div>
-            <h1>Calcular numero de instrucciones</h1>
+            <h4>Calcular número de instrucciones</h4>
         </div>
 
         <body>
-            <form action="#" method="post">
-                <table id="emptbl">
+            <form action="#" method="post" >
+                <table id="emptbl"class="striped">
                     <tr>
-                        <th>Nº Instruccion</th>
-                        <th>Ciclos</th>
-                        <th>Veces que se repite</th>
+                     
+                        <th><h5>Ciclos</h5></th>
+                        <th> <h5>Se repite</h5> </th>
+                        <th> <h5>Total</h5> </th>
                     </tr>
                     <tr>
-                        <td id="col0"><span id="inputCiclos[]" value="0S">0</span></td>
-                        <td id="col1"><input type="text" name="phone[]" value="" /></td>
-                        <td id="col2"><input type="text" name="phone[]" value="" /></td>
-                        
+            
+                        <td id="col0"><input type="number" placeholder="Ingresar la cantidad de ciclos" value="" /></td>
+                        <td id="col1"><input type="number"  placeholder="Ingresar las veces que se repite" value="" /></td>
+                        <td id="col2"><input type="number"  value="" /></td>
                     </tr>
                 </table>
                 <table>
                     <tr>
+                        <td> <a class="btn-floating btn-large waves-effect waves-light blue" value="Añadir fila" onclick="addRows()"><i class="material-icons">add</i></a></td>
+                        <td> <a class="btn-floating btn-large waves-effect waves-light red" value="Eliminar fila" onclick="deleteRows()"><i class="material-icons">delete</i></a></td>
+                        <td> <a class="btn-floating btn-large waves-effect waves-light green" value="Contar" onclick="contarCiclos()"><i class="material-icons">send</i></a></td>
+                        
+                        <!--
                         <td><input type="button" value="Añadir fila" onclick="addRows()" /></td>
                         <td><input type="button" value="Eliminar fila" onclick="deleteRows()" /></td>
-                        <td><input type="button" value="Contar" onclick="contarCiclos()" /></td>
+                        <td><input type="button" value="Contar" onclick="contarCiclos()" /></td>-->
+
                     </tr>
                 </table>
+
+
+                
+
+
                 <p>
                     <label>Ciclos de ejecucion</label>
-                    <span id="inputCiclos" value="0">0</span>
+                    
                 </p>
             </form>
         </body>
-        <script src="js/js.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+        <script src="../../js/tabla.js"></script>
     </main>
 </body>
 

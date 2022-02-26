@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\..\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="..\..\css\estilo.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
     <title>Document</title>
 </head>
 
@@ -13,10 +17,11 @@
     <header>
         <nav>
             <ul class="menu">
-                <li class="item"><a href="calculo.html">Volver</a></li>
-                <li class="item"><a href="tiempo.html">Tiempo de ejecucion</a></li>
+                <li class="item"><a href="../../index.html">Volver</a></li>
                 <li class="item"><a href="ciclos.html">Ciclos</a></li>
-                <li class="item"><a href="Tabla">Tabla</a></li>
+                <li class="item"><a href="frecuencia.html">Frecuencia</a></li>
+                <li class="item"><a href="tiempo.html">Tiempo</a></li>
+                <li class="item"><a href="tabla.html">Tabla</a></li>
             </ul>
         </nav>
     </header>
@@ -24,23 +29,24 @@
         <div>
             <div class="div1">
                 <p>
-                    <label>Frecuencia</label>
+                    <h5>Frecuencia</h5>
+                  
                     <span id="inputFrecuencia"> 0</span>
-                    <select name="escalafrecuencia" id="idescalafrecuencia" onchange="convertir()">
+                    <select name="escalafrecuencia" id="idescalafrecuencia"  class="browser-default" onchange="convertir()">
                         <option value="1">Hz</option>
                         <option value="1000">KHz</option>
                         <option value="1000000">MHz</option>
                         <option value="1000000000">GHz</option>
                     </select>
-                    <label>=</label>
-                    <label>Ciclos para finalizar</label>
+                 
+                    <h6>=Ciclos para finalizar</h6>
+                    
                     <input id="inputCiclos" type="text" step="inputCiclos.value*1000" placeholder="CPI"
                         oninput="calculate()" onchange="calculate()">
-                    <label>* 1/</label>
-                    <label>Tiempo de ejecucion</label>
+                        <h6>* 1 Tiempo de ejecución</h6>
                     <input id="inputTiempo" type="text" step="inputFrecuencia.value*1000" placeholder="S"
                         oninput="calculate()" onchange="calculate()">
-                    <select name="escalatiempo" id="idescalatiempo" onchange="calculate()">
+                    <select name="escalatiempo" id="idescalatiempo"  class="browser-default" onchange="calculate()">
                         <option value="1000000000">ns</option>
                         <option value="1000000">µs</option>
                         <option value="1000">ms</option>
@@ -51,7 +57,7 @@
 
             </div>
         </div>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="../../js/jsd.js"></script>
     </main>
 </body>

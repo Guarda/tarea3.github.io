@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\..\css\style1.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="..\..\css\style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Comparación</title>
 </head>
 
 <body>
@@ -21,27 +23,36 @@
     <main>
         <div>
             <div class="div1">
-                <h1>Programa 1 Comparacion entre CPU</h1>
-                <table class="tabla">
+                <h5>Programa 1 Comparacion entre CPU</h5>
+                <table class="tabla" >
+              
                     <tr>
                         <th> </th>
-                        <th class="rows">Procesador 1</th>
-                        <th class="rows">Procesador 2</th>
+                        <th class="rows">Procesador 1
+                            <img src="../../img/cpu.jpg" alt="">
+
+                        </th>
+                        
+                        <th class="rows">Procesador 2
+                            <img src="../../img/cpu.jpg" alt="">
+                        </th>
                     </tr>
                     <tr>
                         <td>Cantidad de ciclos</td>
                         <td>
                             <input id="inputCiclos1" value="1000" type="number" step="1000" placeholder="CPI"
-                                oninput="calcularTiempo1()" onchange="calcularTiempo1()">
+                            oninput="calcularTiempo1()" onchange="calcularTiempo1()">
                         </td>
                         <td> <input id="inputCiclos2" value="1000" type="number" step="1000" placeholder="CPI"
-                                oninput="calcularTiempo2()" onchange="calcularTiempo2()"></td>
+                            oninput="calcularTiempo2()" onchange="calcularTiempo2()"></td>
                     </tr>
                     <tr>
+                      
                         <td>Frecuencia del procesador</td>
                         <td><input id="inputFrecuencia1" type="number" step="0.1" placeholder="Hz"
                                 oninput="calcularTiempo1()" onchange="calcularTiempo1()">
-                            <select name="escalafrecuencia1" id="escalafrecuencia1" onchange="calcularTiempo1()">
+                            <select name="escalafrecuencia1" id="escalafrecuencia1" class="browser-default" onchange="calcularTiempo1()">
+                                
                                 <option selected="selected" value="1">Hz</option>
                                 <option value="1000">KHz</option>
                                 <option value="1000000">MHz</option>
@@ -50,7 +61,7 @@
                         </td>
                         <td><input id="inputFrecuencia2" type="number" step="0.1" placeholder="Hz"
                                 oninput="calcularTiempo2()" onchange="calcularTiempo2()">
-                            <select name="escalafrecuencia2" id="escalafrecuencia2" onchange="calcularTiempo2()">
+                            <select name="escalafrecuencia2" id="escalafrecuencia2" class="browser-default" onchange="calcularTiempo2()">
                                 <option selected="selected" value="1">Hz</option>
                                 <option value="1000">KHz</option>
                                 <option value="1000000">MHz</option>
@@ -60,9 +71,9 @@
                     </tr>
                     <tr>
                         <td>Tiempo de ejecucion</td>
-                        <td><input id="inputTiempo1" type="value" step="0.001" placeholder="Segundos"
+                        <td><input id="inputTiempo1" type="number" step="0.001" placeholder="Segundos"
                                 oninput="calculateCiclos1()" onchange="calculateCiclos1()">
-                            <select name="escalatiempo" id="idescalatiempo1" onchange="convertir1()">
+                                <select name="escalatiempo" id="idescalatiempo1" class="browser-default" onchange="convertir1()">
                                 <option value="1000000000">ns</option>
                                 <option value="1000000">µs</option>
                                 <option value="1000">ms</option>
@@ -71,7 +82,7 @@
                         </td>
                         <td><input id="inputTiempo2" type="text" step="0.001" placeholder="Segundos"
                                 oninput="calculateCiclos()" onchange="calculateCiclos()">
-                            <select name="escalatiempo" id="idescalatiempo2" onchange="convertir2()">
+                            <select name="escalatiempo" id="idescalatiempo2" class="browser-default" onchange="convertir2()">
                                 <option value="1000000000">ns</option>
                                 <option value="1000000">µs</option>
                                 <option value="1000">ms</option>
@@ -108,7 +119,7 @@
 
             </div>
         </div>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="../../js/programa1.js"></script>
     </main>
 </body>

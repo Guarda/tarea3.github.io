@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="../../css/estilo.css">
+       <!--Import Google Icon Font-->
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       
+       <!-- Compiled and minified CSS -->
+        <title>Programa Factura</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li class="item"><a href="../../index.html">Volver</a></li>
+                    <li class="item"><a href="ciclos.html">Ciclos</a></li>
+                    <li class="item"><a href="frecuencia.html">Frecuencia</a></li>
+                    <li class="item"><a href="tiempo.html">Tiempo</a></li>
+                    <li class="item"><a href="tabla.html">Tabla</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+      
+        <h5>Tabla de ciclos</h5>
+        <div class="wrapper">
+            <script type="text/javascript">
+                function añadirProducto(){
+                    productos = new Array();
+                    elementos = parseInt(prompt("¿ Cuantas instrucciones deseas añadir ?"));
+                    for (let i = 0; i < elementos; i++) {
+                        num=i+1;
+                        instruccion = prompt("Id Instrucción:");
+                        ciclos = prompt("Ciclos de "+ instruccion);
+                        vecesr = parseInt(prompt("Veces que se repite instrucción "+instruccion+' = '+ciclos));
+                        total = parseInt(ciclos*vecesr);
+                
+                        productos.push(new Array(num,instruccion,ciclos, vecesr, total));
+                    }
+                    return productos;
+                }
+                
+                
+                function getCells(data, type) {
+                return data.map(cell => `<${type}>${cell}</${type}>`).join('');
+                }
+                
+                function createBody(data) {
+                return data.map(row => `<tr>${getCells(row, 'td')}</tr>`).join('');
+                }
+                
+                function createTable(data) {
+                let cabeceras = ['N° INSTRUCCIONES', 'INSTRUCCIÓN', 'CICLOS', 'VECES QUE SE REPITE','TOTAL'];
+                return `
+                <table>
+                <thead>${getCells(cabeceras, 'th')}</thead>
+                <tbody>${createBody(data)}</tbody>
+                </table>
+                `;
+                }
+    
+                
+    
+            </script>
+            <div class="row">
+                
+              <table class="highlight"> 
+                <tr>
+                    
+                    <td> <a class="btn-floating btn-large waves-effect waves-light blue" value="Contar" onclick="document.body.insertAdjacentHTML('beforeend', createTable(añadirProducto()));" ><i class="material-icons"> add </i></a></td>
+           
+                    <!--
+                    <td><input type="button" value="Añadir fila" onclick="addRows()" /></td>
+                    <td><input type="button" value="Eliminar fila" onclick="deleteRows()" /></td>
+                    <td><input type="button" value="Contar" onclick="contarCiclos()" /></td>-->
+
+                </tr>
+            </table>
+            
+       
+
+
+        
+
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+      
+        
+</body>
+</html>
